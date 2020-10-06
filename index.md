@@ -52,6 +52,8 @@ PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 }
 ```
 
+See also this [readme](wprdf/README.md).
+
 ### Interactions
 
 For interactions in the pathways we can also define shape expressions. For example, a general interaction would look like this:
@@ -93,6 +95,8 @@ PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 }
 ```
 
+See also this [readme](interaction/README.md).
+
 ## Databases in Wikidata
 
 
@@ -102,5 +106,4 @@ PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 
 
 ## NanoSafety RDF
-
 
