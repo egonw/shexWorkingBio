@@ -1,0 +1,9 @@
+PREFIX dc:  <http://purl.org/dc/elements/1.1/>
+PREFIX wp:  <http://vocabularies.wikipathways.org/wp#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<gene> {
+  dc:identifier IRI ;
+  dc:source xsd:string ;
+  wp:bdbEnsembl IRI
+}

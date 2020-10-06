@@ -21,6 +21,36 @@ It does not intend to replace these documents:
 
 ## WikiPathways RDF
 
+We start with a basic shape expression for a WikiPathways RDF `DataNode` for a gene:
+
+```turtle
+<http://identifiers.org/ncbigene/5604>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "MAP2K1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/ncbigene/5604> ;
+        dc:source           "Entrez Gene"^^xsd:string ;
+        dcterms:identifier  "5604"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP4806_r110852> ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000169032> ;
+        wp:bdbEntrezGene    <http://identifiers.org/ncbigene/5604> ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/MAP2K1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/Q02750> , <http://identifiers.org/uniprot/A4QPA9> , <http://identifiers.org/uniprot/H3BRW9> ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP4806_r110852/DataNode/b64f4> .
+```
+
+We can define a shape expression that requires that all gene products have an identifier
+and a Ensembl identifier mapped with BridgeDb:
+
+```shex
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+
+<gene> {
+  dc:identifier IRI ;
+  dc:source xsd:string ;
+  wp:bdbEnsembl IRI
+}
+```
 
 ### Interactions
 
