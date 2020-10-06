@@ -162,3 +162,46 @@ See also this [readme](aop/README.md).
 
 ## NanoSafety RDF
 
+The [eNanoMapper](http://enanomapper.net/) project developed a RDF format for nanosafety data, which 
+is currently being completed in the [NanoCommons](https://www.nanocommons.eu/) project.
+The [Adding nanomaterial data](https://nanocommons.github.io/tutorials/enteringData/) tutorial
+shows example RDF fragments for key properties. This document describe basic shape expressions
+for the bits of information in the format.
+
+### A dataset
+
+The example given is:
+
+```turtle
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owner: <https://nanocommons.github.io/tutorials/demo/owner/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+
+owner:NT18-DS
+  a                   void:Dataset ;
+  dcterms:license     <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dcterms:publisher   "Egon Willighagen"@en ;
+  dcterms:description "Nanomaterials I am excited about."@en ;
+  dcterms:title       "Exciting nanomaterials"@en .
+```
+
+We can define a shape expression that requires all these predicate to be present:
+
+```shex
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owner: <https://nanocommons.github.io/tutorials/demo/owner/>
+PREFIX void:  <http://rdfs.org/ns/void#>
+
+<dataset> {
+  a [ void:Dataset ] ;
+  dcterms:license IRI ;
+  dcterms:publisher xsd:string ;
+  dcterms:description xsd:string ;
+  dcterms:title xsd:string
+}
+```
+
+### A nanomaterial
+
+
+### A measurement
