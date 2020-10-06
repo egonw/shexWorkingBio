@@ -19,3 +19,20 @@ It does not intend to replace these documents:
 * [Primer](http://shex.io/shex-primer/index.html)
 * [ShEx spec](http://shex.io/shex-semantics/index.html)
 
+## WikiPathways RDF
+
+
+### Interactions
+
+
+## Databases in Wikidata
+
+
+
+## Adverse Outcome Pathways
+
+
+
+## NanoSafety RDF
+
+
