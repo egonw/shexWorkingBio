@@ -1,0 +1,10 @@
+prefix aopo: <http://aopkb.org/aop_ontology#>
+
+<ker> {
+  aopo:has_upstream_key_event     @<ke> ;
+  aopo:has_downstream_key_event   @<ke>
+}
+
+<ke> {
+   a [ aopo:KeyEvent ]
+}

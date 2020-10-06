@@ -106,7 +106,59 @@ See also this [readme](interaction/README.md).
 
 ## Adverse Outcome Pathways
 
+Another interesting aspect of ShEx is that shapes can reference other shapes. For example, take the
+following adverse outcome pathway RDF (thx to Marvin for the example):
 
+```turtle
+@prefix aop.relationships: <http://identifiers.org/aop.relationships/> .
+@prefix aop: <http://identifiers.org/aop/> .
+@prefix aop.events: <http://identifiers.org/aop.events/> .
+@prefix aopo: <http://aopkb.org/aop_ontology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+aop.relationships:597
+        a       aopo:KeyEventRelationship ;
+        dc:identifier   aop.relationships:597 ;
+        rdfs:label      "KER 597" ;
+        foaf:page       <http://identifiers.org/aop.relationships/597> ;
+        dcterms:created "2016-11-29T18:41:34" ;
+        dcterms:modified        "2016-12-03T16:37:58" ;
+        aopo:has_upstream_key_event     aop.events:593 ;
+        aopo:has_downstream_key_event   aop.events:585 ;
+        dcterms:isPartOf        aop:95 .
+
+aop.events:593
+        a       aopo:KeyEvent ;
+        dc:identifier   aop.events:593 ;
+        rdfs:label      "KE 593" ;
+        foaf:page       <http://identifiers.org/aop.events/593> ;
+        dc:title        "Inhibition, Ether-a-go-go (ERG) voltage-gated potassium channel " ;
+        dcterms:alternative     "Inhibition, Ether-a-go-go (ERG) voltage-gated potassium channel " ;
+        dc:source       "AOPWiki" ;
+        dcterms:isPartOf        aop:95 .
+```
+
+Here, each key event relationship requires two key events. We can then define two shapes and
+say that the object of, in this case, the `aopo:has_upstream_key_event` predicate should be
+something that adheres to the other shape:
+
+```shex
+prefix aopo: <http://aopkb.org/aop_ontology#>
+
+<ker> {
+  aopo:has_upstream_key_event     @<ke> ;
+  aopo:has_downstream_key_event   @<ke>
+}
+
+<ke> {
+   a [ aopo:KeyEvent ]
+}
+```
+
+See also this [readme](aop/README.md).
 
 ## NanoSafety RDF
 
