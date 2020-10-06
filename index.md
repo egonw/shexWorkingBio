@@ -5,7 +5,7 @@ Author: Egon Willighagen
 
 # Introduction
 
-[ShEx](http://shex.io/) is one the systems to write shape expressions. Shape expressions describe ("express")
+[ShEx](http://shex.io/) or Shape Expressions is a formal language to describe ("express")
 how a piece of RDF can take form ("shape"). The people that have worked with eXtensible Markup Language (XML)
 in the past know the approach as schema, as in Document Type Definitions (DTD), XML Schema, or Schematron.
 The people that know SPARQL, a shape expression is quite similar, but instead of asking for data, the
