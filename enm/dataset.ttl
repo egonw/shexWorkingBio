@@ -1,0 +1,10 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owner: <https://nanocommons.github.io/tutorials/demo/owner/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+
+owner:NT18-DS
+  a                   void:Dataset ;
+  dcterms:license     <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dcterms:publisher   "Egon Willighagen"@en ;
+  dcterms:description "Nanomaterials I am excited about."@en ;
+  dcterms:title       "Exciting nanomaterials"@en .

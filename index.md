@@ -189,15 +189,17 @@ We can define a shape expression that requires all these predicate to be present
 
 ```shex
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owner: <https://nanocommons.github.io/tutorials/demo/owner/>
 PREFIX void:  <http://rdfs.org/ns/void#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
 
 <dataset> {
   a [ void:Dataset ] ;
   dcterms:license IRI ;
-  dcterms:publisher xsd:string ;
-  dcterms:description xsd:string ;
-  dcterms:title xsd:string
+  dcterms:publisher rdf:langString ;
+  dcterms:description rdf:langString ;
+  dcterms:title rdf:langString
 }
 ```
 
