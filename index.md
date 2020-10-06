@@ -54,6 +54,29 @@ PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 
 ### Interactions
 
+For interactions in the pathways we can also define shape expressions. For example, a general interaction would look like this:
+
+```shex
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+
+<interaction> {
+  wp:participants   IRI {1,} 
+}
+```
+
+We can extend this shape to expect a `wp:source` and `wp:target` for directed interactions:
+
+```shex
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+
+<interaction> {
+  wp:participants   IRI {2,} ;
+  wp:source         IRI ;
+  wp:target         IRI
+}
+```
 
 ## Databases in Wikidata
 
